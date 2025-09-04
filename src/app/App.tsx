@@ -21,7 +21,7 @@ const App: React.FC = () => {
   const { isLoading, isError, data, error, refetch } = activeQuery;
 
   const hasArticles = (data?.articles?.length ?? 0) > 0;
-  const noArticles = (data?.articles?.length ?? 0) === 0;
+  const noArticles = !isLoading && (data?.articles?.length ?? 0) === 0;
 
   return (
     <>
