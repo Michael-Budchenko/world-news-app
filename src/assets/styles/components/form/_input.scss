@@ -1,0 +1,37 @@
+.input {
+  @apply border shadow-input transition-colors duration-300 bg-white border-solid w-full rounded-[0.3125rem] min-h-[2.375rem] text-manatee font-InterSemiBold text-[1rem] px-[0.875rem] py-[0.4375rem] border-hawkesBlue disabled:opacity-50 disabled:cursor-not-allowed;
+
+  &::placeholder {
+    @apply text-manatee;
+  }
+
+  &:focus-within {
+    @apply border-mainBlue;
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #7e8299 !important;
+  }
+
+  .error-section & {
+    @apply border-mainRed;
+  }
+
+  .form-section.with-icon & {
+    @apply pe-[40px];
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}

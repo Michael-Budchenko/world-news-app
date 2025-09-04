@@ -1,0 +1,81 @@
+@use '../utilities/index' as *;
+
+.loader {
+  @apply absolute w-full h-full left-0 top-0;
+}
+
+.loader svg {
+  @apply absolute w-[12.5rem] sm:w-[9.375rem] h-auto left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%];
+  animation: 0.5s truck infinite;
+}
+
+@keyframes truck {
+  0% {
+    transform: scaleY(1) translate(-50%, -50%);
+  }
+  50% {
+    transform: scaleY(0.95) translate(-50%, -50%);
+  }
+  100% {
+    transform: scaleY(1) translate(-50%, -50%);
+  }
+}
+
+.map-loader {
+  @apply absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] flex justify-center flex-col items-center;
+  svg {
+    @apply h-[4rem] w-auto;
+    animation: color-transition 3s infinite;
+  }
+
+  .dot {
+    @apply size-5 bg-dodgerBlue rounded-full z-[1] rotate-[55deg];
+    animation: dot-transition 3s infinite;
+  }
+}
+
+@keyframes color-transition {
+  0%,
+  100% {
+    stroke: #3e97ff;
+    transform: translateY(-25%);
+  }
+  50% {
+    stroke: #0d38c7;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dot-transition {
+  0%,
+  100% {
+    background-color: #3e97ff;
+  }
+  50% {
+    background-color: #0d38c7;
+  }
+}
+
+.loader-spinner {
+  @apply size-[3.125rem] rounded-full;
+  background:
+    radial-gradient(farthest-side, #0d38c7 94%, #0000) top/8px 8px no-repeat,
+    conic-gradient(#0000 30%, #0d38c7);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: l13 1s infinite linear;
+}
+
+@keyframes l13 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.loading-sheet {
+  @apply relative;
+
+  &::before {
+    @apply content-[''] w-full h-full left-0 top-0 absolute bg-snow bg-opacity-80 animate-pulse z-[2];
+  }
+}

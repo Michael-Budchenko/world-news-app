@@ -1,0 +1,55 @@
+@use '../abstracts/media-query' as *;
+
+.burger {
+  @apply hidden;
+
+  @media (max-width: $pc) {
+    @apply flex absolute size-8 anyHover:hover:bg-white anyHover:hover:bg-opacity-20 left-6 top-[50%] translate-y-[-50%] rounded-md;
+
+    &-wrapper {
+      @apply absolute left-[0.3125rem] right-[0.3125rem] top-[0.375rem] bottom-[0.375rem] rotate-0;
+
+      > span {
+        @apply block bg-white h-[0.125rem] absolute;
+
+        &:first-child {
+          @apply top-0 w-[1.0625rem] left-[50%] translate-x-[-50%] rounded-sm;
+        }
+        &:last-child {
+          @apply bottom-[0] w-[1.0625rem] left-[50%] translate-x-[-50%] rounded-sm duration-200;
+        }
+        &:nth-child(2) {
+          @apply top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] rounded-sm w-[1.5rem];
+        }
+      }
+
+      .menu-open & {
+        @apply rotate-[-315deg] transition-transform duration-300;
+
+        > span {
+          &:first-child {
+            @apply translate-x-[-50%] rotate-90 top-[9px] transition-[transform,top] duration-200;
+          }
+          &:last-child {
+            @apply transition-[transform,top] duration-200 top-[0.5625rem];
+          }
+          &:nth-child(2) {
+            @apply opacity-0 transition-opacity duration-300;
+          }
+        }
+      }
+      .menu-closed & {
+        @apply transition-transform duration-300;
+        > span {
+          &:last-child,
+          &:first-child {
+            @apply transition-[transform,top] duration-200;
+          }
+          &:nth-child(2) {
+            @apply transition-opacity duration-300;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@use '../abstracts/media-query' as *;
+
+.app-layout {
+  @apply grid grid-cols-[15rem,1fr] h-full;
+
+  @media (max-width: $pc) {
+    @apply grid-cols-1 grid-rows-[auto,1fr] content-start;
+  }
+
+  &__body {
+    @apply flex flex-col overflow-hidden;
+  }
+}
+
+.sidebar {
+  &__header {
+    @apply flex w-full relative bg-blackMint py-10 xl:py-6 lg:px-[4.5rem] lg:py-3 sm:py-2 z-[5];
+  }
+}
+
+.nav-list {
+  @apply space-y-2;
+
+  &__main-link,
+  &__colapse-btn {
+    @apply flex  w-full font-InterSemiBold duration-300 transition-colors text-[1rem] rounded-[0.5625rem] items-center py-2 px-3 gap-2;
+    @apply anyHover:hover:text-white anyHover:hover:bg-white anyHover:hover:bg-opacity-20;
+    &.active {
+      @apply bg-mainBlue text-white;
+    }
+  }
+
+  &__sublink-link {
+    @apply relative flex items-center rounded-[0.5625rem] ps-6 gap-3 transition-colors py-3 leading-none duration-300;
+    @apply anyHover:hover:text-white anyHover:hover:bg-white anyHover:hover:bg-opacity-20;
+    &::before {
+      content: '';
+      @apply block size-[0.375rem] bg-hawkesBlue rounded-full transition-colors duration-300;
+    }
+
+    &.active {
+      @apply text-dodgerBlue bg-transparent;
+
+      &::before {
+        @apply bg-dodgerBlue;
+      }
+    }
+  }
+
+  &__colapse-btn {
+    @apply relative justify-between;
+    &.active {
+      @apply anyHover:hover:bg-ceruleanBlue;
+    }
+  }
+}
+
+.sidebar-nav {
+  &__wrapper {
+    @apply overflow-hidden grow;
+
+    @media (max-width: $pc) {
+      @apply size-4 fixed w-full z-[4] flex h-full opacity-0 pointer-events-none bg-comet bg-opacity-50;
+
+      .menu-open & {
+        @apply opacity-100 pointer-events-auto transition-opacity duration-200 delay-0;
+      }
+
+      .menu-closed & {
+        @apply transition-opacity duration-200 opacity-0 pointer-events-none delay-300;
+      }
+    }
+  }
+  &__body {
+    @apply flex overflow-hidden h-full text-hawkesBlue flex-col;
+
+    @media (max-width: $pc) {
+      @apply bg-jaguar pt-[3.3125rem] w-[15.625rem] translate-x-[-100%];
+
+      .menu-open & {
+        @apply transition-transform translate-x-0 duration-300 delay-200;
+      }
+      .menu-closed & {
+        @apply transition-transform translate-x-[-100%] duration-300 delay-0;
+      }
+    }
+    @media (max-width: $mobile) {
+      @apply pt-[2.5625rem];
+    }
+  }
+}

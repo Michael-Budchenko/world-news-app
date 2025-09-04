@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'InterBold';
+  font-display: swap;
+  src:
+    url('../fonts/Inter-Bold.woff2') format('woff2'),
+    url('../fonts/Inter-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterSemiBold';
+  font-display: swap;
+  src:
+    url('../fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('../fonts/Inter-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterMedium';
+  font-display: swap;
+  src:
+    url('../fonts/Inter-Medium.woff2') format('woff2'),
+    url('../fonts/Inter-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterRegular';
+  font-display: swap;
+  src:
+    url('../fonts/Inter-Regular.woff2') format('woff2'),
+    url('../fonts/Inter-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

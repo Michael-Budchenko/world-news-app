@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+.Toastify {
+  --toastify-color-success: #b2ebc0;
+  --toastify-color-error: #f8c9c4;
+  --toastify-color-info: #c2e0f4;
+  --toastify-color-warning: #faead0;
+
+  // styling icon
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+
+  // styling text
+  --toastify-font-family: $fontFamily;
+  --toastify-text-color-info: #3498db;
+  --toastify-text-color-success: #07bc0c;
+  --toastify-text-color-warning: #edb95e;
+  --toastify-text-color-error: #e74c3c;
+
+  &__toast-body {
+    position: relative;
+    padding-left: 2.5rem;
+    text-align: start;
+
+    > div:last-child {
+      font-size: 1.25rem;
+      line-height: 1;
+      font-weight: 600;
+    }
+  }
+
+  &__toast-icon {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+  }
+
+  &__progress-bar--bg {
+    background: transparent !important;
+  }
+
+  &__progress-bar {
+    background: transparent !important;
+  }
+  &__toast--success {
+    --toastify-text-color-light: #000;
+  }
+}
