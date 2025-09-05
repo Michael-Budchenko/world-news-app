@@ -8,7 +8,7 @@ export const useNewsManager = () => {
   const [currentView, setCurrentView] = useState<'headlines' | 'search' | 'category'>('headlines');
 
   const headlinesQuery = useGetTopHeadlines({
-    category: selectedCategory,
+    category: currentView === 'headlines' ? undefined : selectedCategory,
     pageSize: 12,
     country: 'us',
   });
