@@ -1,5 +1,5 @@
 .input {
-  @apply border shadow-input transition-colors duration-300 bg-white border-solid w-full rounded-[0.3125rem] min-h-[2.375rem] text-manatee font-InterSemiBold text-[1rem] px-[0.875rem] py-[0.4375rem] border-hawkesBlue disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply min-h-[2.375rem] w-full rounded-[0.3125rem] border border-solid border-hawkesBlue bg-white px-[0.875rem] py-[0.4375rem] font-InterSemiBold text-[1rem] text-manatee shadow-input transition-colors duration-300 disabled:cursor-not-allowed disabled:opacity-50;
 
   &::placeholder {
     @apply text-manatee;
