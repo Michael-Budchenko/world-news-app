@@ -10,7 +10,7 @@ interface CategoryFilterProps {
 
 const CategoryFilter = ({ selectedCategory, onCategoryChange, onShowAll }: CategoryFilterProps) => {
   return (
-    <div className="mb-8 mt-14 rounded-lg bg-white p-4 shadow-sm">
+    <div className="mb-8 mt-20 rounded-lg bg-white p-4 shadow-sm">
       <div className="mb-4 flex items-center justify-between">
         <h3 className="text-lg font-semibold text-slate-900">News Categories</h3>
         <button

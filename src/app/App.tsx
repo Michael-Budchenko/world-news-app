@@ -33,14 +33,12 @@ const App: React.FC = () => {
           showHeadlines={showHeadlines}
           searchQuery={searchQuery}
         />
-
-        <main className="container mx-auto flex-1 px-4 py-6">
-          <CategoryFilter
-            selectedCategory={selectedCategory}
-            onCategoryChange={handleCategoryChange}
-            onShowAll={showHeadlines}
-          />
-
+        <CategoryFilter
+          selectedCategory={selectedCategory}
+          onCategoryChange={handleCategoryChange}
+          onShowAll={showHeadlines}
+        />
+        <main className="container flex-1 px-4 py-6">
           <ResultsHeader
             currentView={currentView}
             searchQuery={searchQuery}
